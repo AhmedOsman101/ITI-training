@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: pink;
+}
+
+body {
+  font-size: 1.2rem;
+  display: grid;
+  place-items: center;
+  min-height: 90vh;
+}
+
+legend {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: red;
+  padding: 0 10px;
+}
+
+input {
+  padding: 4px 6px;
+}
+
+fieldset {
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.text,
+#password,
+select {
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+button {
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+}
