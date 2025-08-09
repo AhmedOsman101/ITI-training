@@ -1,0 +1,9 @@
+{
+  "emmet.excludeLanguages": [],
+  "emmet.includeLanguages": {
+    "blade": "html",
+    "vue-html": "html",
+    "react": "html",
+    "php": "html"
+  }
+}
