@@ -7,7 +7,7 @@
       praesentium fuga accusamus iure ea velit numquam perferendis quo id modi, sit ullam sint illo! Architecto
     </p>
     <div class="space-x-5">
-      <button class="bg-[#FF6A2D] px-5 py-4 cursor-pointer uppercase">
+      <button class="bg-amber-500 px-5 py-4 cursor-pointer uppercase">
         shop now
       </button>
       <button class="uppercase bg-black text-white px-5 py-4 cursor-pointer">

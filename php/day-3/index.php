@@ -48,18 +48,18 @@
     </div>
 
     <?php
-    $fruit = "orange";
-    include __DIR__ . "/components/fruitOne.php";
+    $fruite = "orange";
+    include __DIR__ . "/components/fruite.php";
     ?>
 
     <?php
-    $fruit = "grapes";
-    include __DIR__ . "/components/fruitOne.php";
+    $fruite = "grapes";
+    include __DIR__ . "/components/fruite.php";
     ?>
 
     <?php
-    $fruit = "guava";
-    include __DIR__ . "/components/fruitOne.php";
+    $fruite = "guava";
+    include __DIR__ . "/components/fruite.php";
     ?>
   </section>
 
@@ -86,7 +86,7 @@
     </div>
   </section>
 
-  <section class="flex space-y-16 mt-10 px-20 pr-0 py-5 justify-between items-center w-full" id="contact-us">
+  <section class="flex space-y-16 mt-10 pl-20 pr-0 py-5 justify-between items-center w-full">
     <div class="flex flex-col gap-10 w-1/2">
       <h2 class="text-4xl font-semibold capitalize">Contact Us</h2>
       <form class="flex flex-col gap-5">
