@@ -9,7 +9,7 @@
         <a href="/day-3/index.php">Home</a>
       </li>
       <li>
-        <a href="/day-3/fruits.php">Fruits</a>
+        <a href="/day-3/fruites.php">Fruits</a>
       </li>
       <li>
         <a href="/day-3/services.php">Services</a>

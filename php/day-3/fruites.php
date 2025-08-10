@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage</title>
-  <link rel="stylesheet" href="assets/app.css">
+  <link rel="stylesheet" href="assets/index.css">
 </head>
 
 <body class="grid place-items-center mx-auto">
@@ -17,18 +17,18 @@
     </div>
 
     <?php
-    $fruit = "orange";
-    include __DIR__ . "/components/fruitOne.php";
+    $fruite = "orange";
+    include __DIR__ . "/components/fruite.php";
     ?>
 
     <?php
-    $fruit = "grapes";
-    include __DIR__ . "/components/fruitOne.php";
+    $fruite = "grapes";
+    include __DIR__ . "/components/fruite.php";
     ?>
 
     <?php
-    $fruit = "guava";
-    include __DIR__ . "/components/fruitOne.php";
+    $fruite = "guava";
+    include __DIR__ . "/components/fruite.php";
     ?>
   </section>
 
