@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blank</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css" />
+  </head>
+  <body>
+    <p id="main"></p>
+    <script>
+      const para = window.main;
+      const message =
+        "Your message is being displayed character by character :)<br />This page will terminate after 3..2..1";
+      const length = message.length;
+      let current = 0;
+      setInterval(() => {
+        if (current === length) setTimeout(window.close, 700);
+        para.innerHTML = message.slice(0, current);
+        current++;
+      }, 100);
+    </script>
+  </body>
+</html>
