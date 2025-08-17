@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 6 - Page 1</title>
+
+    <script src="assets/index.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css" />
+
+    <link rel="stylesheet" href="assets/index.css" />
+  </head>
+
+  <body>
+    <h1>Lab 1</h1>
+    <form id="form">
+      <input type="text" placeholder="Name" name="username" id="username" />
+      <input type="text" placeholder="Image" name="image" id="image" />
+      <select name="select" id="select">
+        <option value="" selected>select a font size</option>
+        <option value="12px">12</option>
+        <option value="14px">14</option>
+        <option value="16px">16</option>
+        <option value="18px">18</option>
+        <option value="20px">20</option>
+        <option value="22px">22</option>
+        <option value="24px">24</option>
+        <option value="26px">26</option>
+        <option value="28px">28</option>
+        <option value="30px">30</option>
+        <option value="32px">32</option>
+      </select>
+      <button type="button" onclick="plus('font')">+</button>
+      <button type="button" onclick="minus()">-</button>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="display">
+      <p id="display"></p>
+      <button type="button" onclick="plus('image')" style="width: fit-content">
+        +
+      </button>
+    </div>
+    <img id="img" class="hidden" style="width: 300px" />
+  </body>
+</html>
