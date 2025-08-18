@@ -54,11 +54,10 @@ function validate(data) {
   if (!emailRegex.test(email)) errors.email = "Invalid email";
   if (!phoneRegex.test(phone)) errors.phone = "Invalid phone format";
   if (!imageRegex.test(image)) errors.image = "Invalid photo extension";
+  if (confirmPass !== password) errors.confirmPass = "Passwords don't match";
   if (!passwordRegex.test(password)) {
     errors.password = "Password must have a symbol and minimum length 8";
   }
-
-  if (confirmPass !== password) errors.confirmPass = "Passwords don't match";
 
   return errors;
 }
