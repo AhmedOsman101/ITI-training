@@ -29,13 +29,13 @@ function validate(data) {
   const nameRegex = /^[A-Z][\w\s]*$/i;
   const emailRegex = /[A-Z0-9._%+-]+@[A-Z0-9-]+.\.[A-Z]{2,4}/i;
   const phoneRegex = /^(010|011|012|015)+\d{8}/;
-  const imageRegex = /.+(\.png|\.jpeg|\.jpg)$/;
+  const imageRegex = /^[\w]+(\.png|\.jpeg|\.jpg)$/;
   const passwordRegex = /^(?=.*[@$!%*?&_])[A-Za-z0-9@$!%*?&_]{8,}$/;
 
   const name = data.get("name");
   const email = data.get("email");
   const phone = data.get("phone");
-  const image = data.get("image").name;
+  const image = data.get("image").name; // NOTE: This is of type File
   const password = data.get("password");
   const confirmPass = data.get("confirmPass");
 
