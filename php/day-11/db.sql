@@ -1,31 +1,7 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Jul 07, 2024 at 05:36 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `company_last`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `department`
---
 
 CREATE TABLE `department` (
   `dname` varchar(50) NOT NULL,
@@ -34,20 +10,10 @@ CREATE TABLE `department` (
   `mgrstartdate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `department`
---
-
 INSERT INTO `department` (`dname`, `dnum`, `mgrssn`, `mgrstartdate`) VALUES
 ('dp1', 10, 223344, '2005-01-01'),
 ('dp2', 20, 968574, '2006-03-01'),
 ('dp3', 30, 512463, '2006-06-01');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `dependent`
---
 
 CREATE TABLE `dependent` (
   `essn` int(10) UNSIGNED NOT NULL,
@@ -55,10 +21,6 @@ CREATE TABLE `dependent` (
   `gender` enum('m','f') NOT NULL,
   `bdate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `dependent`
---
 
 INSERT INTO `dependent` (`essn`, `dependent_name`, `gender`, `bdate`) VALUES
 (112233, 'Hala Saied Ali', 'f', '1970-10-18'),
@@ -69,12 +31,6 @@ INSERT INTO `dependent` (`essn`, `dependent_name`, `gender`, `bdate`) VALUES
 (321654, 'Sanaa Gawish', 'f', '1973-05-16'),
 (512463, 'Nora Ghaly', 'f', '1976-06-22'),
 (512463, 'Sara Edward ', 'f', '2001-09-15');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `employee`
---
 
 CREATE TABLE `employee` (
   `fname` varchar(20) NOT NULL,
@@ -88,9 +44,6 @@ CREATE TABLE `employee` (
   `dno` tinyint(3) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `employee`
---
 
 INSERT INTO `employee` (`fname`, `lname`, `ssn`, `bdate`, `address`, `gender`, `salary`, `superssn`, `dno`) VALUES
 ('ahmed', 'ali', 112233, '1965-01-01', '15 Ali fahmy St.Giza', 'm', '1300.00', 223344, 10),
@@ -102,12 +55,6 @@ INSERT INTO `employee` (`fname`, `lname`, `ssn`, `bdate`, `address`, `gender`, `
 ('mariam', 'adel', 669955, '1982-06-12', '269 El-Haram st. Giza', 'f', '750.00', 512463, 20),
 ('noha', 'mohamed', 968574, '1975-02-01', '55 Orabi St. El Mohandiseen .Cairo', 'f', '1600.00', 968574, 30);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `project`
---
-
 CREATE TABLE `project` (
   `pname` varchar(50) NOT NULL,
   `pnumber` smallint(5) UNSIGNED NOT NULL,
@@ -115,10 +62,6 @@ CREATE TABLE `project` (
   `city` varchar(50) NOT NULL,
   `dnum` tinyint(3) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `project`
---
 
 INSERT INTO `project` (`pname`, `pnumber`, `plocation`, `city`, `dnum`) VALUES
 ('AL Solimaniah', 100, 'Cairo_Alex Road', 'alex', 10),
@@ -129,21 +72,11 @@ INSERT INTO `project` (`pname`, `pnumber`, `plocation`, `city`, `dnum`) VALUES
 ('Pitcho american', 600, 'maady', 'cairo', 30),
 ('Ebad El Rahman', 700, 'ring Road', 'cairo', 20);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `works_for`
---
-
 CREATE TABLE `works_for` (
   `essn` int(10) UNSIGNED NOT NULL,
   `pno` smallint(5) UNSIGNED NOT NULL,
   `hours` smallint(5) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `works_for`
---
 
 INSERT INTO `works_for` (`essn`, `pno`, `hours`) VALUES
 (112233, 100, 40),
@@ -164,83 +97,73 @@ INSERT INTO `works_for` (`essn`, `pno`, `hours`) VALUES
 (968574, 400, 15),
 (968574, 700, 15);
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `department`
---
 ALTER TABLE `department`
   ADD PRIMARY KEY (`dnum`),
   ADD UNIQUE KEY `mgrssn` (`mgrssn`);
 
---
--- Indexes for table `dependent`
---
 ALTER TABLE `dependent`
   ADD PRIMARY KEY (`essn`,`dependent_name`),
   ADD UNIQUE KEY `dependent_name` (`dependent_name`);
 
---
--- Indexes for table `employee`
---
 ALTER TABLE `employee`
   ADD PRIMARY KEY (`ssn`),
   ADD KEY `fk_superssn_employee` (`superssn`),
   ADD KEY `fk_dno_employee` (`dno`);
 
---
--- Indexes for table `project`
---
 ALTER TABLE `project`
   ADD PRIMARY KEY (`pnumber`),
   ADD KEY `fk_dnum_project` (`dnum`);
 
---
--- Indexes for table `works_for`
---
 ALTER TABLE `works_for`
   ADD PRIMARY KEY (`essn`,`pno`),
   ADD KEY `fk_pno_works_for` (`pno`);
 
---
--- Constraints for dumped tables
---
 
---
--- Constraints for table `department`
---
 ALTER TABLE `department`
   ADD CONSTRAINT `fk_mgrssn_department` FOREIGN KEY (`mgrssn`) REFERENCES `employee` (`ssn`);
 
---
--- Constraints for table `dependent`
---
 ALTER TABLE `dependent`
   ADD CONSTRAINT `fk_essn_dependent` FOREIGN KEY (`essn`) REFERENCES `employee` (`ssn`) ON DELETE CASCADE ON UPDATE CASCADE;
 
---
--- Constraints for table `employee`
---
 ALTER TABLE `employee`
   ADD CONSTRAINT `fk_dno_employee` FOREIGN KEY (`dno`) REFERENCES `department` (`dnum`),
   ADD CONSTRAINT `fk_superssn_employee` FOREIGN KEY (`superssn`) REFERENCES `employee` (`ssn`);
 
---
--- Constraints for table `project`
---
 ALTER TABLE `project`
   ADD CONSTRAINT `fk_dnum_project` FOREIGN KEY (`dnum`) REFERENCES `department` (`dnum`);
 
---
--- Constraints for table `works_for`
---
 ALTER TABLE `works_for`
   ADD CONSTRAINT `fk_essn_works_for` FOREIGN KEY (`essn`) REFERENCES `employee` (`ssn`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_pno_works_for` FOREIGN KEY (`pno`) REFERENCES `project` (`pnumber`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- Later changes --
+
+INSERT INTO `employee` ( `fname`, `lname`, `ssn`, `bdate`, `address`, `gender`, `salary`, `superssn`, `dno` )
+VALUES ( 'Ahmad', 'Othman', 102672, '2005-12-15', 'Nasr City, Cairo', 'm', '9999.00', 112233, 30 );
+
+INSERT INTO employee (fname, lname, ssn, bdate, address, gender, dno)
+VALUES ('besto', 'friendo', 102660, '2005-12-15', 'Nasr City, Cairo', 'm', 30);
+
+INSERT INTO
+  department (dname, dnum, mgrssn, mgrstartdate)
+VALUES
+  ('DEPT IT', 100, 112233, '2006-11-01');
+
+UPDATE employee SET dno = 100 WHERE ssn = (SELECT ssn FROM employee WHERE fname = 'noha' AND lname = 'mohamed'); -- Set department number for Noha
+UPDATE employee SET dno = 20 WHERE ssn = (SELECT ssn FROM employee WHERE fname = 'besto' AND lname = 'friendo'); -- Set department number for my friend
+
+UPDATE department SET mgrssn = (SELECT ssn FROM employee WHERE fname = 'besto' AND lname = 'friendo') WHERE dnum = 20;
+
+UPDATE department SET mgrssn = (SELECT ssn FROM employee WHERE fname = 'noha' AND lname = 'mohamed') WHERE dnum = 100;
+
+UPDATE department SET mgrssn = (SELECT ssn FROM employee WHERE fname = 'Ahmad' AND lname = 'Othman') WHERE mgrssn = (SELECT ssn FROM employee WHERE fname = 'kamel' AND lname = 'mohamed');
+
+UPDATE employee SET superssn = (SELECT ssn FROM employee WHERE fname = 'Ahmad' AND lname = 'Othman') WHERE superssn = (SELECT ssn FROM employee WHERE fname = 'kamel' AND lname = 'mohamed');
+
+DELETE FROM employee
+WHERE
+  fname = 'kamel'
+  AND lname = 'mohamed';
+
+UPDATE employee SET dno = 10, salary = salary * 1.20 WHERE fname = 'Ahmad' AND lname = 'Othman';
