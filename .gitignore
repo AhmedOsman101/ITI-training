@@ -1,3 +1,6 @@
+# etc
+**/day-9/*.png
+
 # Logs
 logs
 *.log
@@ -15,8 +18,8 @@ dist-ssr
 coverage
 *.local
 .vite
-/cypress/videos/
-/cypress/screenshots/
+cypress/videos/
+cypress/screenshots/
 
 # Editor directories and files
 .idea
@@ -28,15 +31,14 @@ coverage
 *.tsbuildinfo
 
 # Laravel
-/.phpunit.cache
-/bootstrap/ssr
-/node_modules
-/public/build
-/public/hot
-/public/storage
-/storage/*.key
-/storage/pail
-/vendor
+.phpunit.cache
+bootstrap/ssr
+public/build
+public/hot
+public/storage
+storage/*.key
+storage/pail
+vendor
 .env
 .env.backup
 .env.production
@@ -46,12 +48,10 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/auth.json
-/.fleet
-/.idea
-/.nova
-/.vscode
-/.zed
+auth.json
+.fleet
+.nova
+.vscode
+.zed
 UI-DESIGN-STEPS.md
 DB-Relations.md
-*/day-9/*.png
