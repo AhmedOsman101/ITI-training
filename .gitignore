@@ -51,7 +51,6 @@ yarn-error.log
 auth.json
 .fleet
 .nova
-.vscode
 .zed
 UI-DESIGN-STEPS.md
 DB-Relations.md
