@@ -1,0 +1,19 @@
+{
+  "name": "othman/php",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/",
+      "App\\Model\\": "src/models/",
+      "App\\Database\\": "src/database/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ahmad Othman",
+      "email": "ahmad.ali.othman@outlook.com"
+    }
+  ],
+  "require": {}
+}

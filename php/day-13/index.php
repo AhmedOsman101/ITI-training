@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-require_once __DIR__ . '/../utils.php';
+require_once __DIR__ . '/../src/utils.php';
 
 bodyStart("Day 13 - Task 1");
 

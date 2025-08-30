@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-require __DIR__ . '/../utils.php';
+require __DIR__ . '/../src/utils.php';
 
 bodyStart("Day 14 - Task 2 - Result");
 

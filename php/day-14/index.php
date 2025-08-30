@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-require_once __DIR__ . '/../utils.php';
+require_once __DIR__ . '/../src/utils.php';
 
-$styles = <<<EOF
+$styles = <<<CSS
 label {
   display: flex;
   align-items: center;
@@ -17,9 +17,9 @@ label p {
 input, select {
   width: 100%;
 }
-EOF;
+CSS;
 
-bodyStart("Day 13 - Task 2", $styles);
+bodyStart("Day 14 - Task 2", $styles);
 ?>
 
 <h1>Add User</h1>

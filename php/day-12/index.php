@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
 require 'vendor/autoload.php';
-require_once __DIR__ . '/../utils.php';
+require_once __DIR__ . '/../src/utils.php';
 
 bodyStart("Day 12");
 heading(3, "1. Print 'Welcome to php'");
