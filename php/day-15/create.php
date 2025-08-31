@@ -102,7 +102,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
   if (isset($_FILES['image'])) {
     $image = validateImage($_FILES['image'], $errors);
-    println($image);
 
     if (is_array($image)) {
       $uploadDir = __DIR__ . "/uploads";
