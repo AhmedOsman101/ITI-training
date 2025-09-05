@@ -14,23 +14,29 @@
     <!-- Table -->
     <div class="relative h-full flex-1 overflow-x-auto rounded-xl border border-neutral-200 dark:border-neutral-700">
       <table class="min-w-full table-auto divide-y divide-neutral-200 dark:divide-neutral-700">
-        <thead class="bg-neutral-900">
+        <thead class="bg-neutral-900 w-full">
           <tr>
-            <th scope="col" class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-200">ID
+            <th scope="col" class="px-4 py-2 text-center text-sm font-semibold text-neutral-700 dark:text-neutral-200">
+              ID
             </th>
-            <th scope="col" class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-200">
-              Name</th>
-            <th scope="col" class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-200">
-              Email</th>
-            <th scope="col" class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-200">
-              Department</th>
-            <th scope="col" class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-200">
-              Image</th>
-            <th scope="col" class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-200">
-              Actions</th>
+            <th scope="col" class="px-4 py-2 text-center text-sm font-semibold text-neutral-700 dark:text-neutral-200">
+              Name
+            </th>
+            <th scope="col" class="px-4 py-2 text-center text-sm font-semibold text-neutral-700 dark:text-neutral-200">
+              Email
+            </th>
+            <th scope="col" class="px-4 py-2 text-center text-sm font-semibold text-neutral-700 dark:text-neutral-200">
+              Department
+            </th>
+            <th scope="col" class="px-4 py-2 text-center text-sm font-semibold text-neutral-700 dark:text-neutral-200">
+              Image
+            </th>
+            <th scope="col" class="px-4 py-2 text-center text-sm font-semibold text-neutral-700 dark:text-neutral-200">
+              Actions
+            </th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-neutral-200 dark:divide-neutral-700" id="students">
+        <tbody class="divide-y divide-neutral-200 dark:divide-neutral-700 text-center">
           @foreach ($students as $student)
           <tr class="hover:bg-neutral-50 dark:hover:bg-neutral-800">
             <th scope="row" class="px-4 py-2 text-sm text-neutral-900 dark:text-neutral-100">
@@ -63,7 +69,7 @@
               </a>
               @endif
             </td>
-            <td class="px-4 py-2">
+            <td class="px-4 flex py-2 justify-center">
               <div class="flex items-center gap-4 w-fit">
                 <a href="{{ route('students.edit', $student) }}" class="cursor-pointer text-xl hover:text-blue-400">
                   

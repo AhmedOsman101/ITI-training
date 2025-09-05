@@ -83,7 +83,10 @@ class StudentController extends Controller {
    * Remove the specified resource from storage.
    */
   public function destroy(Student $student) {
-    Student::destroy($student->id);
-    return to_route('students.index')->with('success', 'Student deleted successfully.');
+    $student->delete();
+
+    return redirect()
+      ->route('students.index')
+      ->with('success', 'Student deleted successfully.');
   }
 }
