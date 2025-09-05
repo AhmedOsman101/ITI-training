@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
@@ -19,6 +20,7 @@ Route::middleware(['auth'])->group(
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 
     Route::resource('students', StudentController::class);
+    Route::resource('departments', DepartmentController::class);
   }
 );
 
